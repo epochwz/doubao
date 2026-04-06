@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>豆包视觉模型接入</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="config.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>豆包视觉模型</h1>
+        <div class="config-section">
+            <h2>配置参数</h2>
+            <div class="config-item">
+                <label for="api-key">API Key：</label>
+                <input type="password" id="api-key" placeholder="请输入API Key">
+            </div>
+            <div class="config-item">
+                <label for="model">模型：</label>
+                <select id="model">
+                    <option value="doubao-seedream-5-0-260128">doubao-seedream-5.0 (doubao-seedream-5-0-260128)</option>
+                    <option value="doubao-seedream-5-0-lite-260128">doubao-seedream-5.0-lite (doubao-seedream-5-0-lite-260128)</option>
+                    <option value="doubao-seedream-4-5-251128">doubao-seedream-4.5 (doubao-seedream-4-5-251128)</option>
+                    <option value="doubao-seedream-4-0-250828">doubao-seedream-4.0 (doubao-seedream-4-0-250828)</option>
+                    <option value="doubao-seedream-3-0-t2i-250415">doubao-seedream-3.0-t2i (doubao-seedream-3-0-t2i-250415)</option>
+                </select>
+            </div>
+            <div class="config-item">
+                <label for="generation-mode">生成模式：</label>
+                <select id="generation-mode">
+                    <option value="disabled">单图</option>
+                    <option value="auto">组图</option>
+                </select>
+            </div>
+            <div class="config-item">
+                <label for="size">尺寸：</label>
+                <select id="size">
+                    <option value="2048x2048">2048x2048</option>
+                    <option value="2304x1728">2304x1728 (4:3)</option>
+                    <option value="1728x2304">1728x2304 (3:4)</option>
+                    <option value="2848x1600">2848x1600 (16:9)</option>
+                    <option value="1600x2848">1600x2848 (9:16)</option>
+                    <option value="2K">2K</option>
+                    <option value="4K">4K</option>
+                </select>
+            </div>
+            <div class="config-item">
+                <label for="max-images">生成图片最大数量：</label>
+                <input type="number" id="max-images" min="1" max="15" value="4">
+            </div>
+        </div>
+        <div class="input-section">
+            <div class="prompt-container">
+                <label for="prompt">提示词：</label>
+                <textarea id="prompt" placeholder="请输入提示词..."></textarea>
+            </div>
+            <div class="image-container">
+                <label for="image">参考图片：</label>
+                <input type="file" id="image" accept="image/*" multiple>
+                <div id="image-preview"></div>
+            </div>
+            <button id="generate-btn">生成</button>
+        </div>
+        <div class="output-section">
+            <h2>生成结果</h2>
+            <div id="result"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
