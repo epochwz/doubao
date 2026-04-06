@@ -40,8 +40,13 @@ function initDefaults() {
         
         // 设置默认API Key
         const apiKeyInput = document.getElementById('api-key');
-        if (apiKeyInput && defaults.apiKey) {
-            apiKeyInput.value = defaults.apiKey;
+        if (apiKeyInput) {
+            // 优先使用config.api.key（从localConfig合并的值）
+            if (config.api.key) {
+                apiKeyInput.value = config.api.key;
+            } else if (defaults.apiKey) {
+                apiKeyInput.value = defaults.apiKey;
+            }
         }
         
         // 设置默认提示词

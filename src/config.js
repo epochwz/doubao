@@ -19,11 +19,6 @@ const config = {
     
     // 模型配置
     models: {
-        'doubao-seedream-5-0-260128': {
-            name: 'doubao-seedream-5.0',
-            id: 'doubao-seedream-5-0-260128',
-            description: '豆包最强图片生成模型，搭载联网检索，增强知识广度、参考一致性及专业场景生成质量'
-        },
         'doubao-seedream-5-0-lite-260128': {
             name: 'doubao-seedream-5.0-lite',
             id: 'doubao-seedream-5-0-lite-260128',
